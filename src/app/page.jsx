@@ -1,5 +1,6 @@
 export const runtime = 'edge'
 import Gallery from '@/components/organism/Artwork'
+import { getAccessToken, fetchGalleryImages } from '@/app/api/route'
 
 export default function HomePage() {
    return (
