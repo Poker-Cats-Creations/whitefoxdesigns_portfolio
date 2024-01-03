@@ -2,7 +2,7 @@ export async function getAccessToken(req, res) {
    const clientId = process.env.CLIENT_ID
    const clientSecret = process.env.CLIENT_SECRET
 
-   const response = await fetch('https://cors-anywhere.herokuapp.com/https://www.deviantart.com/oauth2/token', {
+   const response = await fetch('https://www.deviantart.com/oauth2/token', {
       method: 'POST',
       body: new URLSearchParams({
          client_id: clientId,
@@ -39,7 +39,7 @@ export async function getAccessToken(req, res) {
 }
 
 export async function fetchGalleryImages(accessToken) {
-   const url = 'https://cors-anywhere.herokuapp.com/https://www.deviantart.com/api/v1/oauth2/gallery/all'
+   const url = 'https://www.deviantart.com/api/v1/oauth2/gallery/all'
 
    const response = await fetch(url, {
       method: 'GET',
