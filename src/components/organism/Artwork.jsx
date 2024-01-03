@@ -8,6 +8,10 @@ const Gallery = async () => {
    const accessToken = await getAccessToken()
    const artworksData = await fetchGalleryImages(accessToken)
 
+   if (!artworksData) {
+      return <div>Loading data...</div>
+   }
+
    return (
       <div className='container mx-auto px-4 py-12'>
          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
