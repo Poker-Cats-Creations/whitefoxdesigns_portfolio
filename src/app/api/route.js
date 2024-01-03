@@ -4,9 +4,6 @@ async function getAccessToken() {
    try {
       const response = await fetch(url, {
          method: 'POST',
-         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-         },
          body: new URLSearchParams({
             client_id: process.env.CLIENT_ID,
             client_secret: process.env.CLIENT_SECRET,
@@ -23,7 +20,7 @@ async function getAccessToken() {
 }
 
 async function fetchGalleryImages(accessToken) {
-   const url = 'https://www.deviantart.com/api/v1/oauth2/gallery/all'
+   const url = `https://www.deviantart.com/api/v1/oauth2/gallery/all?validate_token=8ac65cb108da3be985c0&validate_key=1704289296&username=whitefoxdesigns&calculate_size=false&ext_preload=true&filter_empty_folder=true&with_session=true&mature_content=true`
 
    try {
       const response = await fetch(url, {

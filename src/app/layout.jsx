@@ -12,7 +12,7 @@ export const metadata = {
 export default function LocaleLayout({ children }) {
    return (
       <html suppressHydrationWarning>
-         <body className='dark h-device bg-primary-dark text-white-50 antialiased'>
+         <body className='dark h-device bg-white-50 text-primary-dark antialiased'>
             <Providers>{children}</Providers>
          </body>
       </html>
