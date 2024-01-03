@@ -10,7 +10,7 @@ const Gallery = () => {
    useEffect(() => {
       const fetchData = async () => {
          try {
-            const accessToken = await getAccessToken()
+            const accessToken = await fetch('/api/getgallery')
             console.log(accessToken)
             const artworksData = await fetchGalleryImages(accessToken)
             setArtworks(artworksData || [])
