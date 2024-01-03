@@ -10,12 +10,12 @@ const Gallery = () => {
    useEffect(() => {
       const fetchData = async () => {
          try {
-            const accessToken = await fetch('/api/getgallery')
+            const accessToken = await getAccessToken()
             console.log(accessToken)
             const artworksData = await fetchGalleryImages(accessToken)
             setArtworks(artworksData || [])
          } catch (error) {
-            console.error('Wystąpił błąd podczas pobierania danych:', error)
+            console.error('Error fetching data:', error)
          }
       }
 
