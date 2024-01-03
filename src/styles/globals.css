@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;450;600;700&family=Urbanist:wght@100;200;300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+   --foreground-rgb: 0, 0, 0;
+   --background-start-rgb: 214, 219, 220;
+   --background-end-rgb: 255, 255, 255;
+
+   --accent-hue: 223;
+   --primary-dark: hsl(206, 42%, 7%);
+   --primary-lighter: hsl(206, 42%, 10%);
+   --primary-badge: hsl(206, 42%, 13%);
+}
+
+::selection {
+   color: #ffd56b;
+   background: #121923;
+}
+
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+.h-device {
+   min-height: 100vh;
+   min-height: 100dvh;
+}
+
+.link {
+   @apply text-accent-500 transition-colors hover:text-accent-600 hover:underline;
+}
+
+html {
+   @apply font-rubik;
+   font-weight: 400;
+}
+
+img.emoji {
+   height: 1em;
+   width: 1em;
+   margin: 0 0.1em 0 0.25em;
+   vertical-align: -0.1em;
+   display: inline-block;
+   row-gap: 4px;
+}
+
+img.emoji ~ img.emoji {
+   margin: 0 0.125em 0 0.1em;
+}
+
+img.emoji:not(:last-of-type) {
+   margin: 0 0.125em 0 0.1em;
+}
+
+/* .toast {
+   cursor: pointer;
+   width: '100%';
+}
+
+.toast-hidden {
+   transform: scale(0.9);
+   opacity: 0.6;
+   margin-top: -20px;
+}
+
+.toast-visible {
+   transform: scale(1);
+   opacity: 1;
+   margin-top: 0;
+}
+
+.toast:hover {
+   z-index: 10;
+   transform: scale(1.02);
+} */
