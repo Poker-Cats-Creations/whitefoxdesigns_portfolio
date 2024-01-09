@@ -1,11 +1,13 @@
 export const runtime = 'edge'
 import React from 'react'
 
+import Gallery from '@/components/organism/Artwork'
+
 export const metadata = {
    title: 'Home',
    description: 'StarOwl is a social media platform that allows you to connect with artists and creators.',
 }
 
-export default function Home() {
-   return <p>Home</p>
+export default function HomePage() {
+   return <Gallery />
 }

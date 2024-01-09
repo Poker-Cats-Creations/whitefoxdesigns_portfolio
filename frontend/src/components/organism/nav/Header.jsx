@@ -61,13 +61,14 @@ const Header = () => {
       setIsBlurred(offset > 50)
    }
 
-   const menuItems = ['About Me', 'Portfolio', 'Contact']
+   const menuItems = ['About Me', 'Terms of Service', 'Contact']
 
    return (
       <Navbar
          onMenuOpenChange={setIsMenuOpen}
          onScrollPositionChange={handleScroll}
-         className={`justify-center bg-primary-dark/[.8] backdrop-filter-none py-4 ${isBlurred && 'backdrop-filter backdrop-blur-lg'} mb-12`}
+         disableAnimation={true}
+         className={`justify-center bg-primary-dark/[.8] backdrop-filter-none py-4 ${isBlurred && 'backdrop-filter backdrop-blur-lg'} mb-6`}
          maxWidth='2xl'
          // classNames={{
          //    base: 'bg-primary-dark/[.8] backdrop-filter-none py-4',
@@ -85,15 +86,15 @@ const Header = () => {
                </Link>
             </NavbarBrand>
          </NavbarContent>
-         {/* <NavbarContent justify='end'>
+         <NavbarContent justify='end'>
             <NavbarMenuToggle
                aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
                className='sm:hidden'
             />
-         </NavbarContent> */}
+         </NavbarContent>
          <NavbarContent
             justify='end'
-            className='space-x-1'>
+            className='space-x-1 hidden sm:flex'>
             <NavbarItem>
                <Link
                   color='foreground'
@@ -104,10 +105,10 @@ const Header = () => {
             </NavbarItem>
             <NavbarItem>
                <Link
-                  href='/en/portfolio'
+                  href='/en/tos'
                   // aria-current='page'
                   className='text-lg text-white-50 transition-colors hover:text-[#f48638] hover:opacity-100'>
-                  Portfolio
+                  Terms of Service
                </Link>
             </NavbarItem>
             <NavbarItem>
@@ -118,7 +119,7 @@ const Header = () => {
                </Link>
             </NavbarItem>
          </NavbarContent>
-         {/* <NavbarMenu className='bg-prmiary-dark'>
+         <NavbarMenu className='bg-prmiary-dark pt-12'>
             {menuItems.map((item, index) => (
                <NavbarMenuItem key={`${item}-${index}`}>
                   <Link
@@ -130,7 +131,7 @@ const Header = () => {
                   </Link>
                </NavbarMenuItem>
             ))}
-         </NavbarMenu> */}
+         </NavbarMenu>
       </Navbar>
    )
 }

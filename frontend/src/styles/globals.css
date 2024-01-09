@@ -5,14 +5,7 @@
 @tailwind utilities;
 
 :root {
-   --foreground-rgb: 0, 0, 0;
-   --background-start-rgb: 214, 219, 220;
-   --background-end-rgb: 255, 255, 255;
-
    --accent-hue: 29;
-   --primary-dark: hsl(222, 25%, 7.8%);
-   --primary-lighter: hsl(206, 42%, 10%);
-   --primary-badge: hsl(206, 42%, 13%);
 }
 
 ::selection {

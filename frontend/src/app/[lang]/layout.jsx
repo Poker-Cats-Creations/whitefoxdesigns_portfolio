@@ -1,7 +1,9 @@
 import React from 'react'
 import { notFound } from 'next/navigation'
 
-import Header from '@/components/organism/nav/Header'
+//import Header from '@/components/organism/nav/Header'
+import Header from '@/components/organism/nav/Headerv2'
+import Footer from '@/components/organism/nav/Footer'
 
 //import { Nav } from '@/components/organism/nav/Nav'
 //import { AsideNav } from '@/components/organism/nav/AsideNav'
@@ -24,12 +26,8 @@ export default function LocaleLayout({ children, params: { lang } }) {
    return (
       <div className='h-full'>
          <Header />
-         <main className='container mx-auto'>{children}</main>
+         <main className='container max-w-6xl mx-auto pt-40 px-6 min-h-screen pb-12'>{children}</main>
+         <Footer />
       </div>
-      // <div className='pb-24 md:flex md:pb-0 xl:justify-center xl:gap-6'>
-      //    <main className='flex w-full flex-col gap-4 p-4 leading-none md:max-w-xl md:gap-6 md:p-0 md:py-[2.5rem] lg:max-w-lg xl:max-w-xl'>
-      //       {children}
-      //    </main>
-      // </div>
    )
 }

@@ -34,8 +34,8 @@ module.exports = {
          colors: {
             // Background Colors
             'primary-dark': 'hsl(222, 25%, 7.8%)',
-            'primary-lighter': 'hsl(206, 42%, 10%)',
-            'primary-badge': 'hsl(206, 42%, 13%)',
+            'primary-lighter': 'hsl(222, 25%, 10.8%)',
+            'primary-badge': 'hsl(222, 25%, 13.8%)',
             // 'primary-dark': 'hsl(206, 42%, 7%)',
             // 'primary-lighter': 'hsl(206, 42%, 10%)',
             // 'primary-badge': 'hsl(206, 42%, 13%)',

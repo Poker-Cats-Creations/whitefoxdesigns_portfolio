@@ -10,6 +10,7 @@ const buttonVariants = cva(
    {
       variants: {
          variant: {
+            empty: '',
             default:
                'text-accent-50 bg-accent-600 hover:bg-accent-700 active:bg-accent-800 disabled:bg-accent-600 focus:outline outline-1 outline-offset-4 outline-accent-50',
             secondary:
@@ -32,7 +33,7 @@ const buttonVariants = cva(
             counter: 'p-0 gap-0 font-normal',
             link: 'p-0',
             input: 'rounded-xl p-4 font-normal w-full',
-            xs: 'rounded-[0.5rem] px-[1rem] py-[.5rem]',
+            xs: 'rounded-[0.5rem] px-[.938rem] py-[.469rem]',
             sm: 'rounded-[0.625rem] px-[1.5rem] py-[.75rem]',
             default: 'text-sm rounded-[.625rem] px-[1.624rem] py-[.812rem] md:text-base md:rounded-[0.875rem] md:px-[2rem] md:py-[1rem]',
             lg: 'rounded-2xl px-[2.5rem] py-[1.250rem]',
@@ -49,7 +50,7 @@ const buttonVariants = cva(
    }
 )
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
    asChild?: boolean
    icon?: boolean
 }

@@ -34,8 +34,10 @@ async function fetchAccessToken() {
 }
 
 // Function to fetch gallery images using the access token
-async function fetchGalleryImages(accessToken) {
-   const url = `https://www.deviantart.com/api/v1/oauth2/gallery/all?validate_token=8ac65cb108da3be985c0&validate_key=1704289296&username=whitefoxdesigns&calculate_size=false&ext_preload=true&limit=24&filter_empty_folder=true&with_session=true&mature_content=true`
+async function fetchGalleryImages(accessToken, offset = 0) {
+   const actualOffset = offset * 9
+
+   const url = `https://www.deviantart.com/api/v1/oauth2/gallery?validate_token=8ac65cb108da3be985c0&validate_key=1704289296&username=whitefoxdesigns&ext_preload=true&limit=9&offset=${actualOffset}&filter_empty_folder=true&with_session=true&mature_content=true`
 
    try {
       const response = await fetch(url, {
@@ -46,18 +48,48 @@ async function fetchGalleryImages(accessToken) {
       })
 
       const data = await response.json()
-      return data.results
+      return data
    } catch (error) {
       console.error('Error fetching gallery images:', error)
       throw error
    }
 }
 
+// async function fetchAllPages() {
+//    let keepFetching = true
+//    let offset = 0
+//    let allData = []
+
+//    while (keepFetching) {
+//       const response = await fetchGalleryImages(accessToken, offset)
+//       allData = [...allData, ...response.results]
+
+//       if (response.has_more && response.next_offset) {
+//          offset = response.next_offset
+//       } else {
+//          keepFetching = false
+//       }
+//    }
+
+//    return allData
+// }
+
+// app.get('/fetchAllPages', async (req, res) => {
+//    try {
+//       const accessToken = await fetchAccessToken()
+//       const pagination = await fetchAllPages(accessToken)
+//       res.json(pagination)
+//    } catch (error) {
+//       res.status(500).send('Server error')
+//    }
+// })
+
 // Endpoint that combines both fetching access token and gallery images
 app.get('/fetchData', async (req, res) => {
    try {
+      const page = parseInt(req.query.page) || 0
       const accessToken = await fetchAccessToken()
-      const galleryImages = await fetchGalleryImages(accessToken)
+      const galleryImages = await fetchGalleryImages(accessToken, page)
       res.json(galleryImages)
    } catch (error) {
       res.status(500).send('Server error')

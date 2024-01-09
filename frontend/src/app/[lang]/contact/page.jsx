@@ -7,6 +7,6 @@ export const metadata = {
    description: 'StarOwl is a social media platform that allows you to connect with artists and creators.',
 }
 
-export default function Home() {
+export default function ContactPage() {
    return <p>Contact</p>
 }

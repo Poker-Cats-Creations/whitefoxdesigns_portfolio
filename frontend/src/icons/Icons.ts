@@ -41,3 +41,11 @@ export { OutlineChat, SolidChat, DuotoneChat } from './assets/communication/Chat
 // Shopping And Ecommerece
 
 export { OutlineReceipt, SolidReceipt, DuotoneReceipt } from './assets/shopping_and_ecommerce/Receipt'
+
+// Socials
+
+export { OutlineTwitter, SolidTwitter, DuotoneTwitter } from './assets/socials/Twitter'
+
+export { OutlineDribbble, SolidDribbble, DuotoneDribbble } from './assets/socials/Instagram'
+
+export { OutlineInstagram, SolidInstagram, DuotoneInstagram } from './assets/socials/Dribbble'
