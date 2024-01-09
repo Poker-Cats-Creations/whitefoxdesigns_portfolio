@@ -37,7 +37,7 @@ export default function Gallery() {
       const fetchData = async () => {
          try {
             //const imagesResponse = await fetch(`http://localhost:8080/fetchData?page=${currentPage - 1}`)
-            const imagesResponse = await fetch(`http://localhost:3000/api?page=${currentPage - 1}`)
+            const imagesResponse = await fetch(`/api?page=${currentPage - 1}`)
             const { has_more, next_offset, results } = await imagesResponse.json()
             //setHasMore(has_more)
             setArtworks(results)
