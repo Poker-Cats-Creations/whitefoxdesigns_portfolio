@@ -12,7 +12,7 @@ const locales = ['en', 'de', 'nl']
 
 export const metadata = {
    title: {
-      default: 'StarOwl - Home',
+      default: 'Whitefox Designs',
       template: '%s | StarOwl',
    },
    description: 'StarOwl is a social media platform that allows you to connect with artists and creators.',

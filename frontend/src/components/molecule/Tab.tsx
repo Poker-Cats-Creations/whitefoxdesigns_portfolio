@@ -1,17 +1,28 @@
+'use client'
+
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Button } from '../atom/Button'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 let tabs = [
-   { id: 'home', label: 'Home', url: '/en/' },
-   { id: 'about', label: 'About', url: '/en/about' },
-   { id: 'tos', label: 'Terms of Service', url: '/en/tos' },
-   { id: 'contant', label: 'Contant', url: '/en/contact' },
+   { id: 'home', label: 'Home', url: '/' },
+   { id: 'about', label: 'About', url: '/about' },
+   { id: 'tos', label: 'Terms of Service', url: '/tos' },
+   { id: 'contant', label: 'Contant', url: '/contact' },
 ]
 
 export default function AnimatedTabs() {
+   let pathname = usePathname()
    let [activeTab, setActiveTab] = useState(tabs[0].id)
+
+   useEffect(() => {
+      const currentTab = tabs.find((tab) => tab.url === pathname)
+      if (currentTab) {
+         setActiveTab(currentTab.id)
+      }
+   }, [pathname])
 
    return (
       <div className='flex space-x-1'>

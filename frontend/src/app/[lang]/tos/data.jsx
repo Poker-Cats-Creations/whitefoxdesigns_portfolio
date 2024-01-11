@@ -101,15 +101,15 @@ export const contentData = {
       {
          type: 'paragraph',
          content: (
-            <p className='text-white-300'>
+            <React.Fragment>
                Please send an email to
                <Link
-                  href='mailto:whitefoxldesigns@gmail.com'
+                  href='mailto:commissions@whitefoxdesigns.net'
                   target='_blank'
                   className='text-transparent bg-gradient-to-r from-[#e15459] to-[#f47750] inline-block bg-clip-text mx-1'>
-                  whitefoxldesigns@gmail.com
+                  commissions@whitefoxdesigns.net
                </Link>
-               (Lower case &quot;L&quot;),
+               ,
                <Link
                   href='https://twitter.com/WhiteFoxDesign2'
                   target='_blank'
@@ -124,7 +124,7 @@ export const contentData = {
                   @whitefox.designs
                </Link>
                with the following information:
-            </p>
+            </React.Fragment>
          ),
       },
       {
@@ -185,6 +185,7 @@ export const contentData = {
       {
          type: 'list',
          title: 'Once the project starts the designer will provide with:',
+
          items: [
             'An initial design approach. It can be one or more cleaned designs (No sketches)',
             <React.Fragment key={0}>

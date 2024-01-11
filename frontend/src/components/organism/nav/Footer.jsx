@@ -6,16 +6,16 @@ import { OutlineTwitter, OutlineInstagram, OutlineDribbble } from '@/icons/Icons
 
 const Footer = () => {
    const navLinks = [
-      { href: '/en/', title: 'Home' },
-      { href: '/en/about', title: 'About Me' },
-      { href: '/en/tos', title: 'Term of Service' },
-      { href: '/en/contact', title: 'Contact' },
+      { href: '/', title: 'Home' },
+      { href: '/about', title: 'About Me' },
+      { href: '/tos', title: 'Term of Service' },
+      { href: '/contact', title: 'Contact' },
    ]
 
    const socialLinks = [
-      { href: 'https://dribbble.com', icon: <OutlineDribbble size={24} />, label: 'Dribbble' },
-      { href: 'https://twitter.com', icon: <OutlineTwitter size={24} />, label: 'Twitter' },
-      { href: 'https://instagram.com', icon: <OutlineInstagram size={24} />, label: 'Instagram' },
+      { href: 'https://dribbble.com/Whitefox_Designs', icon: <OutlineDribbble size={24} />, label: 'Dribbble' },
+      { href: 'https://twitter.com/WhiteFoxDesign2', icon: <OutlineTwitter size={24} />, label: 'Twitter' },
+      { href: 'https://www.instagram.com/whitefox.designs/', icon: <OutlineInstagram size={24} />, label: 'Instagram' },
    ]
 
    return (

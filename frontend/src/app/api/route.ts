@@ -1,3 +1,5 @@
+import { revalidatePath } from 'next/cache'
+
 export async function fetchAccessToken() {
    try {
       const CLIENT_ID = process.env.CLIENT_ID
@@ -37,6 +39,7 @@ export async function fetchGalleryImages(accessToken: string, offset: number = 0
       })
 
       const response = await data.json()
+      revalidatePath('/api')
       return Response.json(response)
    } catch (error) {
       console.error('Error fetching gallery images:', error)
@@ -51,5 +54,6 @@ export async function GET(request: Request) {
 
    let galleryImages = await fetchGalleryImages(accessTokenData)
    let galleryImagesData = await galleryImages.json()
+
    return Response.json(galleryImagesData)
 }

@@ -29,6 +29,6 @@
 		"**/*.tsx",
 		"src/app/[lang]/bookmarks/page.jsx",
 		"src/app/[lang]/[userId]/page.jsx"
-, "src/components/atom/Toast.tsx", "src/components/organism/Artwork.tsx"	],
+, "src/components/atom/Toast.tsx", "src/components/organism/Artwork.tsx", "src/app/[lang]/tos/data.jsx"	],
 	"exclude": ["node_modules"]
 }

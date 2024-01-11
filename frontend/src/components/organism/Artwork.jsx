@@ -41,6 +41,7 @@ export default function Gallery() {
             const { has_more, next_offset, results } = await imagesResponse.json()
             //setHasMore(has_more)
             setArtworks(results)
+            revalidatePath('/')
             //has_more ? setAvailablePages((prevPages) => prevPages + 1) : setAvailablePages(currentPage)
          } catch (error) {
             console.error('Error fetching data:', error)

@@ -1,3 +1,4 @@
+import { revalidatePath } from 'next/cache'
 import { fetchAccessToken, fetchGalleryImages } from './route'
 
 export async function GET(request: Request) {
