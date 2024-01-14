@@ -105,7 +105,6 @@ export const contentData = {
                Please send an email to
                <Link
                   href='mailto:commissions@whitefoxdesigns.net'
-                  target='_blank'
                   className='link-gradient mx-1'>
                   commissions@whitefoxdesigns.net
                </Link>

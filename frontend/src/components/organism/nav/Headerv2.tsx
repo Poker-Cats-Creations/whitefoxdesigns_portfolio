@@ -37,10 +37,10 @@ export default function Header() {
                </nav>
             </div>
             <motion.nav
-               initial={{ opacity: 0, flex: 'none', x: -100 }}
-               animate={{ opacity: isMenuOpen ? 1 : 0, flex: isMenuOpen ? 'flex' : 'none', x: isMenuOpen ? 0 : -100 }}
+               initial={{ opacity: 0, x: -100 }}
+               animate={{ opacity: isMenuOpen ? 1 : 0, x: isMenuOpen ? 0 : -100 }}
                transition={{ type: 'linear', stiffness: 260, damping: 0 }}
-               className='absolute pt-32 w-full h-screen bg-primary-dark/90 backdrop-blur-lg'>
+               className={`absolute ${isMenuOpen ? 'flex' : 'hidden'} pt-32 w-full h-screen bg-primary-dark/90 backdrop-blur-lg`}>
                <ul className='px-6 space-y-3'>
                   <li>
                      <Link
