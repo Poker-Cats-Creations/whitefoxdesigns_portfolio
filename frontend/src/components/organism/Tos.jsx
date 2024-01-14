@@ -72,10 +72,9 @@ export default function Tos() {
                Terms of Service
             </h1>
          </header>
+         <section>{renderContentSection(contentData.Prices)}</section>
          <section>{renderContentSection(contentData.Payment)}</section>
-
          <section>{renderContentSection(contentData.Cancellations_and_Refunds)}</section>
-
          <section>{renderContentSection(contentData.WorkProcess)}</section>
          <section>{renderContentSection(contentData.Please_Dont)}</section>
          <section>{renderContentSection(contentData.Service)}</section>
