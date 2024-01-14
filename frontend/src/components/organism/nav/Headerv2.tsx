@@ -5,10 +5,12 @@ import AnimatedTabs from '@/components/molecule/Tab'
 import { OutlineClose, OutlineMenu, SolidLogo } from '@/icons/Icons'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import { usePathname } from 'next/navigation'
+import React, { useEffect, useState } from 'react'
 
 export default function Header() {
    const [isMenuOpen, setIsMenuOpen] = useState(false)
+   let pathname = usePathname()
 
    return (
       <React.Fragment>
@@ -45,6 +47,7 @@ export default function Header() {
                   <li>
                      <Link
                         href='/'
+                        className={`${pathname === '/' && 'link-gradient'}`}
                         onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         Home
                      </Link>
@@ -52,6 +55,7 @@ export default function Header() {
                   <li>
                      <Link
                         href='/tos'
+                        className={`${pathname === '/tos' && 'link-gradient'}`}
                         onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         Terms of Service
                      </Link>
@@ -59,6 +63,7 @@ export default function Header() {
                   <li>
                      <Link
                         href='/contact'
+                        className={`${pathname === '/contact' && 'link-gradient'}`}
                         onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         Contact
                      </Link>
