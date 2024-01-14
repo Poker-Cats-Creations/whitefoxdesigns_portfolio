@@ -6,10 +6,10 @@ import Footer from '@/components/organism/nav/Footer'
 
 export const metadata = {
    title: {
-      default: 'StarOwl - Home',
-      template: '%s | StarOwl',
+      default: 'WhiteFoxDesigns - Logo Design Freelancer',
+      template: '%s | WhiteFoxDesigns - Logo Design Freelancer',
    },
-   description: 'StarOwl is a social media platform that allows you to connect with artists and creators.',
+   description: `Experienced Freelance Logo Designer with 10 years of experience. I specialize in creating distinctive brand identities that capture your brand's story and set you apart in the market. Explore my portfolio to see a decade of creative excellence in logo design.`,
 }
 
 export default function LocaleLayout({ children }) {
