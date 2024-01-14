@@ -9,7 +9,7 @@ import { usePathname } from 'next/navigation'
 let tabs = [
    { id: 'home', label: 'Home', url: '/' },
    { id: 'tos', label: 'Terms of Service', url: '/tos' },
-   { id: 'contant', label: 'Contant', url: '/contact' },
+   // { id: 'contant', label: 'Contant', url: '/contact' },
 ]
 
 export default function AnimatedTabs() {

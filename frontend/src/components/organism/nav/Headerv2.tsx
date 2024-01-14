@@ -60,14 +60,14 @@ export default function Header() {
                         Terms of Service
                      </Link>
                   </li>
-                  <li>
+                  {/* <li>
                      <Link
                         href='/contact'
                         className={`${pathname === '/contact' && 'link-gradient'}`}
                         onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         Contact
                      </Link>
-                  </li>
+                  </li> */}
                </ul>
             </motion.nav>
          </header>

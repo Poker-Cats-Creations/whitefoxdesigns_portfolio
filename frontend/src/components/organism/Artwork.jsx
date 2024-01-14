@@ -69,7 +69,6 @@ export default function Gallery() {
                   <div
                      key={index}
                      className='relative flex flex-col items-center space-y-6'>
-                     {/* <Skeleton className='rounded-lg h-10 w-3/4' /> */}
                      <Skeleton className='rounded-2xl h-56 w-64' />
                   </div>
                ))}
@@ -83,44 +82,24 @@ export default function Gallery() {
                      target='_blank'
                      key={image.deviationid}
                      className='relative flex flex-col items-center space-y-6'>
-                     {/* <h2 className='text-lg font-semibold'>{image.title}</h2> */}
                      <div className='relaitve overflow-hidden group flex justify-center outline-dashed outline-offset-1 outline-2 outline-primary-badge rounded-2xl hover:outline-[#f48638] transition-all cursor-pointer'>
                         <Image
                            classNames={{
-                              img: 'object-center bg-origin-border group-hover:opacity-20', //object-none
+                              img: 'cover bg-origin-border group-hover:opacity-20',
                            }}
-                           //isZoomed
-                           width={image.preview.width}
-                           height={image.preview.height}
+                           quality={10}
+                           sizes='100vw'
                            alt={image.title}
                            src={image.preview.src}
-                           className='opacity-1 max-w-full h-auto'
-                           //fallbackSrc={`https://via.placeholder.com/${image.preview.width}x${image.preview.height}`}
+                           className='opacity-1 h-auto w-full'
                         />
                         <h2 className='absolute z-10 bottom-4 text-lg translate-y-4 font-semibold opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all pointer-events-none'>
                            {image.title}
                         </h2>
                      </div>
-                     {/* <p className='text-sm mt-2'>Author: {image.author.username}</p> */}
                   </Link>
                ))}
          </div>
-         {/* {userStats.user_deviations}
-         <Image
-            //isZoomed
-            width={64}
-            height={64}
-            alt={userInfo.username}
-            src={userInfo.usericon}
-            //fallbackSrc={`https://via.placeholder.com/${image.preview.width}x${image.preview.height}`}
-         /> */}
-         {/* <Button variant='outline'>More on DeviantArt</Button> */}
-         {/* <Pagination
-            total={availablePages}
-            initialPage={1}
-            showControls
-            onChange={(page) => setCurrentPage(page)}
-         /> */}
       </div>
    )
 }
