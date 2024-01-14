@@ -12,7 +12,7 @@ const buttonVariants = cva(
          variant: {
             empty: '',
             default:
-               'text-accent-50 bg-accent-600 hover:bg-accent-700 active:bg-accent-800 disabled:bg-accent-600 focus:outline outline-1 outline-offset-4 outline-accent-50',
+               'text-primary-dark bg-white-50 hover:text-white-50 hover:bg-primary-badge active:bg-accent-800 disabled:bg-accent-600 focus:outline outline-1 outline-offset-4 outline-accent-50',
             secondary:
                'text-accent-300 bg-transparent ring-1 ring-inset ring-accent-300 hover:bg-accent-950 active:bg-accent-900 disabled:bg-transparent',
             outline:
@@ -21,6 +21,8 @@ const buttonVariants = cva(
             dimmed: 'bg-black/[.12] backdrop-blur-md hover:bg-black/[.24]',
             link: 'text-accent-600 underline-offset-4 hover:underline',
             counter: 'bg-transparent hover:bg-transparent justify-start',
+            accent:
+               'text-accent-50 bg-accent-600 hover:bg-accent-700 active:bg-accent-800 disabled:bg-accent-600 focus:outline outline-1 outline-offset-4 outline-accent-50',
             danger: 'text-danger-50 bg-danger-600 hover:bg-danger-700 active:bg-danger-800 disabled:bg-danger-600',
             warning: 'text-warning-50 bg-warning-600 hover:bg-warning-700 active:bg-warning-800 disabled:bg-warning-600',
             success: 'text-success-50 bg-success-600 hover:bg-success-700 active:bg-success-800 disabled:bg-success-600',

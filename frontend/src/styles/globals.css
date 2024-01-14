@@ -28,6 +28,10 @@
    @apply text-accent-500 transition-colors hover:text-accent-600 hover:underline;
 }
 
+.link-gradient {
+   @apply text-transparent bg-gradient-to-r from-[#e15459] to-[#f47750] inline-block bg-clip-text;
+}
+
 html {
    @apply font-rubik;
    font-weight: 400;

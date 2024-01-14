@@ -8,7 +8,6 @@ import { usePathname } from 'next/navigation'
 
 let tabs = [
    { id: 'home', label: 'Home', url: '/' },
-   { id: 'about', label: 'About', url: '/about' },
    { id: 'tos', label: 'Terms of Service', url: '/tos' },
    { id: 'contant', label: 'Contant', url: '/contact' },
 ]

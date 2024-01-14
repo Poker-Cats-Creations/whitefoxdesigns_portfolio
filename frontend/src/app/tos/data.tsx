@@ -106,21 +106,21 @@ export const contentData = {
                <Link
                   href='mailto:commissions@whitefoxdesigns.net'
                   target='_blank'
-                  className='text-transparent bg-gradient-to-r from-[#e15459] to-[#f47750] inline-block bg-clip-text mx-1'>
+                  className='link-gradient mx-1'>
                   commissions@whitefoxdesigns.net
                </Link>
                ,
                <Link
                   href='https://twitter.com/WhiteFoxDesign2'
                   target='_blank'
-                  className='text-transparent bg-gradient-to-r from-[#e15459] to-[#f47750] inline-block bg-clip-text mx-1'>
+                  className='link-gradient mx-1'>
                   Twitter DM
                </Link>
                , or Discord
                <Link
                   href='https://discordapp.com/users/113042224987525120'
                   target='_blank'
-                  className='text-transparent bg-gradient-to-r from-[#e15459] to-[#f47750] inline-block bg-clip-text mx-1'>
+                  className='link-gradient mx-1'>
                   @whitefox.designs
                </Link>
                with the following information:
@@ -328,7 +328,7 @@ export const contentData = {
                You can also visit my
                <Link
                   target='_blank'
-                  className='text-transparent bg-gradient-to-r from-[#e15459] to-[#f47750] inline-block bg-clip-text mx-1'
+                  className='link-gradient mx-1'
                   href={'http://fav.me/ddhazrl'}>
                   Service Review
                </Link>
@@ -396,6 +396,48 @@ export const contentData = {
             "The designer can re-use, recycle, modify, share or sell any unused design approaches that aren't variants of the chosen design.",
             "The client can redesign, modify or alter the design in any way he/she wants. The designer will only keep the author's rights over the original design.",
          ],
+      },
+   ],
+   Commonly_asked_questions: [
+      {
+         type: 'title',
+         content: 'Commony asked questions',
+      },
+      {
+         type: 'microtitle',
+         content: 'Can I use the logo I commissioned on other websites?',
+      },
+      {
+         type: 'paragraph',
+         content:
+            'Absolutely yes. You can use the logo however you want. The logo is an identity and as an identity, you can use it in any way you feel is right to identify yourself.',
+      },
+      {
+         type: 'microtitle',
+         content: 'Can I commercialize the design?',
+      },
+      {
+         type: 'paragraph',
+         content:
+            "Yes. All commercial rights belong to you the moment you pay me. That's why I send the original editable files. While you commercialize the design, you can't promote yourself as the creator of the design.",
+      },
+      {
+         type: 'microtitle',
+         content: 'Can I resell the design?',
+      },
+      {
+         type: 'paragraph',
+         content:
+            "Yes. As mentioned before you own all commercial rights, including selling the identity. But keep in mind that you can't violate my author's moral rights, which means you can't promote yourself as the author of the design neither the new buyer, nor you can agree with a third party to pull down all images containing the design, including those on my portfolios.",
+      },
+      {
+         type: 'microtitle',
+         content: `Can I purchase the author's moral rights?`,
+      },
+      {
+         type: 'paragraph',
+         content:
+            "No, but you can request the Vault Service so the design won't be displayed in my portfolios. Still, this doesn't mean that you can claim you made the design but you don't have to tell others I did it.   ",
       },
    ],
 }

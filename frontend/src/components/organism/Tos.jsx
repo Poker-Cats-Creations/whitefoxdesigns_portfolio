@@ -8,7 +8,7 @@ function renderContentSection(sectionData) {
          case 'title':
             return (
                <h2
-                  className='text-lg font-semibold text-white-50'
+                  className='text-lg font-semibold text-white-50 uppercase'
                   key={index}>
                   {item.content}
                </h2>
@@ -77,8 +77,14 @@ export default function Tos() {
          <section>{renderContentSection(contentData.Cancellations_and_Refunds)}</section>
 
          <section>{renderContentSection(contentData.WorkProcess)}</section>
-         {/* <section>{renderContentSection(contentData.Please_Dont)}</section> */}
-         <section>WIP...</section>
+         <section>{renderContentSection(contentData.Please_Dont)}</section>
+         <section>{renderContentSection(contentData.Service)}</section>
+         <section>{renderContentSection(contentData.Commonly_asked_questions)}</section>
+         <section className='text-center'>
+            <h2 className='font-semibold'>
+               For any questions please feel free to send me a note in deviantART or contact me through email or other social media.
+            </h2>
+         </section>
       </article>
    )
 }

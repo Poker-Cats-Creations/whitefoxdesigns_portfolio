@@ -17,9 +17,9 @@ export default function LocaleLayout({ children }) {
       <html suppressHydrationWarning>
          <body className='dark min-h-screen bg-primary-dark text-white-50 antialiased'>
             <Providers>
-               <div className='h-full'>
+               <div className='h-full pb-6'>
                   <Header />
-                  <main className='container max-w-6xl mx-auto pt-40 px-6 min-h-screen pb-12'>{children}</main>
+                  <main className='container max-w-6xl mx-auto pt-32 px-6 min-h-screen pb-12'>{children}</main>
                   <Footer />
                </div>
             </Providers>

@@ -1,107 +1,72 @@
 'use client'
 
+import { Button } from '@/components/atom/Button'
 import AnimatedTabs from '@/components/molecule/Tab'
-import { SolidLogo } from '@/icons/Icons'
-import { motion, useMotionTemplate, useMotionValue, useScroll, useTransform } from 'framer-motion'
+import { OutlineClose, OutlineMenu, SolidLogo } from '@/icons/Icons'
+import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { useEffect } from 'react'
-
-function useBoundedScroll(threshold: number) {
-   let { scrollY } = useScroll()
-   let scrollYBounded = useMotionValue(0)
-   let scrollYBoundedProgress = useTransform(scrollYBounded, [0, threshold], [0, 1])
-
-   useEffect(() => {
-      return scrollY.on('change', (current) => {
-         let previous = scrollY.getPrevious()
-         let diff = current - previous
-         let newScrollYBounded = scrollYBounded.get() + diff
-
-         scrollYBounded.set(clamp(newScrollYBounded, 0, threshold))
-      })
-   }, [threshold, scrollY, scrollYBounded])
-
-   return { scrollYBounded, scrollYBoundedProgress }
-}
+import React, { useState } from 'react'
 
 export default function Header() {
-   let { scrollYBoundedProgress } = useBoundedScroll(200)
-   let scrollYBoundedProgressDelayed = useTransform(scrollYBoundedProgress, [0, 0.75, 1], [0, 0, 1])
+   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
    return (
-      // <div className='mx-auto flex w-full max-w-3xl flex-1 overflow-hidden text-slate-600'>
-      //    <div className='z-0 flex-1 overflow-y-scroll'>
-      <motion.header
-         style={{
-            height: useTransform(scrollYBoundedProgressDelayed, [0, 1], [96, 64]),
-            //backgroundColor: useMotionTemplate`hsl(222, 25%, 10.8% / ${useTransform(scrollYBoundedProgressDelayed, [0, 1], [1, 0.8])})`,
-         }}
-         className='fixed inset-x-0 flex z-50 h-full shadow backdrop-blur-md bg-primary-lighter/80'>
-         <motion.div
-            style={{
-               paddingTop: useMotionTemplate`${useTransform(scrollYBoundedProgressDelayed, [0, 1], [1, 0])}rem`,
-               paddingBottom: useMotionTemplate`${useTransform(scrollYBoundedProgressDelayed, [0, 1], [1, 0])}rem`,
-            }}
-            className={`mx-auto flex w-full max-w-6xl items-center justify-between h-max px-6`}>
-            <motion.div
-               style={{
-                  scale: useTransform(scrollYBoundedProgressDelayed, [0, 1], [1, 0.8]),
-               }}
-               className='flex origin-left items-center text-xl font-semibold uppercase'>
-               <Link
-                  className='text-lg text-white-50 hover:text-[#f48638] hover:opacity-100'
-                  href='/en'>
-                  <SolidLogo
-                     size={64}
-                     className='text-white-50'
-                  />
-               </Link>
-            </motion.div>
+      <React.Fragment>
+         <header className='fixed inset-x-0 flex z-50 shadow backdrop-blur-md bg-primary-lighter/80'>
+            <div className={`mx-auto flex w-full max-w-6xl items-center justify-between h-max px-6 py-4 z-10`}>
+               <div className='flex origin-left items-center text-xl font-semibold uppercase'>
+                  <Link
+                     className='text-lg text-white-50 hover:text-[#f48638] hover:opacity-100'
+                     href='/en'>
+                     <SolidLogo
+                        size={64}
+                        className='text-white-50'
+                     />
+                  </Link>
+               </div>
+               <nav className='flex sm:hidden'>
+                  <Button
+                     onClick={() => setIsMenuOpen(!isMenuOpen)}
+                     variant='ghost'
+                     size='sm-icon'>
+                     {!isMenuOpen ? <OutlineMenu size={24} /> : <OutlineClose size={24} />}
+                  </Button>
+               </nav>
+               <nav className='space-x-4 text-sm font-medium text-slate-400 hidden sm:flex'>
+                  <AnimatedTabs />
+               </nav>
+            </div>
             <motion.nav
-               // style={{
-               //    opacity: useTransform(scrollYBoundedProgressDelayed, [0, 1], [1, 0]),
-               // }}
-               className='flex space-x-4 text-sm font-medium text-slate-400'>
-               <AnimatedTabs />
-               {/* <ul className='flex space-x-6'>
+               initial={{ opacity: 0, flex: 'none', x: -100 }}
+               animate={{ opacity: isMenuOpen ? 1 : 0, flex: isMenuOpen ? 'flex' : 'none', x: isMenuOpen ? 0 : -100 }}
+               transition={{ type: 'linear', stiffness: 260, damping: 0 }}
+               className='absolute pt-32 w-full h-screen bg-primary-dark/90 backdrop-blur-lg'>
+               <ul className='px-6 space-y-3'>
                   <li>
-                     {' '}
                      <Link
-                        color='foreground'
-                        className='text-base text-white-50 transition-colors hover:text-[#f48638] hover:opacity-100'
-                        href='/en/'>
+                        href='/'
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         Home
                      </Link>
                   </li>
                   <li>
                      <Link
-                        color='foreground'
-                        className='text-base text-white-50 transition-colors hover:text-[#f48638] hover:opacity-100'
-                        href='/en/about'>
-                        About Me
-                     </Link>
-                  </li>
-                  <li>
-                     <Link
-                        href='/en/tos'
-                        // aria-current='page'
-                        className='text-base text-white-50 transition-colors hover:text-[#f48638] hover:opacity-100'>
+                        href='/tos'
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         Terms of Service
                      </Link>
                   </li>
                   <li>
                      <Link
-                        className='text-base text-white-50 transition-colors hover:text-[#f48638] hover:opacity-100'
-                        href='/en/contact'>
+                        href='/contact'
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         Contact
                      </Link>
                   </li>
-               </ul> */}
+               </ul>
             </motion.nav>
-         </motion.div>
-      </motion.header>
-      //    </div>
-      // </div>
+         </header>
+      </React.Fragment>
    )
 }
 

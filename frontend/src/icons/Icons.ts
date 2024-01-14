@@ -2,6 +2,8 @@ export { SolidLogo } from './assets/logo/logo'
 
 //User Inferface
 
+export { OutlineMenu, SolidMenu, DuotoneMenu } from './assets/user_interface/Menu'
+
 export { OutlineHome, SolidHome, DuotoneHome } from './assets/user_interface/Home'
 
 export { OutlineSearch, SolidSearch, DuotoneSearch } from './assets/user_interface/Search'

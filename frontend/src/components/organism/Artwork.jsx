@@ -9,6 +9,8 @@ import { Button } from '../atom/Button'
 
 export default function Gallery() {
    const [artworks, setArtworks] = useState([])
+   const [userInfo, setUserInfo] = useState({})
+   const [userStats, setUserStats] = useState({})
    const [isLoading, setIsLoading] = useState(true)
    const [currentPage, setCurrentPage] = useState(1)
    //const [hasMore, setHasMore] = useState(true)
@@ -36,13 +38,16 @@ export default function Gallery() {
 
       const fetchData = async () => {
          try {
-            //const imagesResponse = await fetch(`http://localhost:8080/fetchData?page=${currentPage - 1}`)
-            const imagesResponse = await fetch(`/api?page=${currentPage - 1}`)
+            const imagesResponse = await fetch(`/api/getDevinatArtGallery?page=${currentPage - 1}`)
             const { has_more, next_offset, results } = await imagesResponse.json()
-            //setHasMore(has_more)
             setArtworks(results)
-            revalidatePath('/')
+            //setHasMore(has_more)
             //has_more ? setAvailablePages((prevPages) => prevPages + 1) : setAvailablePages(currentPage)
+
+            const userResponse = await fetch(`/api/getDeviantArtUser`)
+            const { user, stats } = await userResponse.json()
+            setUserInfo(user)
+            setUserStats(stats)
          } catch (error) {
             console.error('Error fetching data:', error)
          } finally {
@@ -100,7 +105,16 @@ export default function Gallery() {
                   </Link>
                ))}
          </div>
-         <Button variant='ghost'>More on DeviantArt</Button>
+         {/* {userStats.user_deviations}
+         <Image
+            //isZoomed
+            width={64}
+            height={64}
+            alt={userInfo.username}
+            src={userInfo.usericon}
+            //fallbackSrc={`https://via.placeholder.com/${image.preview.width}x${image.preview.height}`}
+         /> */}
+         {/* <Button variant='outline'>More on DeviantArt</Button> */}
          {/* <Pagination
             total={availablePages}
             initialPage={1}
